@@ -34,11 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Home.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/Home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -50,6 +60,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -62,6 +73,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/web/Home.html" />
       </list>
     </option>
   </component>
@@ -142,24 +154,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OnlineBanking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OnlineBanking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -218,6 +212,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35747126" />
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -709,12 +704,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1498579831066</updated>
-      <workItem from="1498579835381" duration="475000" />
+      <workItem from="1498579835381" duration="862000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="475000" />
+    <option name="totallyTimeSpent" value="862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="-8" width="1870" height="1096" extended-state="6" />
@@ -791,6 +786,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
           <folding />
         </state>
       </provider>
