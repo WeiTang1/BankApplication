@@ -7,7 +7,7 @@ import java.util.List;
  */
 public interface DAO {
     void save(Object obj);
-    void update(Object objl, int id);
+    void update(Object obj, int id);
     void delete(Object obj);
     void delete(int id);
     Object get(int id);

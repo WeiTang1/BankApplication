@@ -47,6 +47,7 @@ public class AddressHibernateDAO extends HibernateDaoSupport implements DAO{
         return list.get(0);
     }
 
+    @Transactional
     public List list() {
         List list = getHibernateTemplate().loadAll(Address.class);
         return list;

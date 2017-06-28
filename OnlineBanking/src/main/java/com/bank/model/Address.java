@@ -1,5 +1,5 @@
 package com.bank.model;
-// Generated Jun 28, 2017 11:29:53 AM by Hibernate Tools 4.3.1
+// Generated Jun 28, 2017 12:51:24 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

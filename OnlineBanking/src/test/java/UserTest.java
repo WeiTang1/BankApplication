@@ -16,12 +16,13 @@ public class UserTest {
         UserHibernateDAO dao = (UserHibernateDAO) context.getBean("userDAO");
         Date date = new Date();
         Address address = new Address();
-        Address address2 = new Address();
-        address2.setId(2);
+//        Address address2 = new Address();
+//        address2.setId(2);
         address.setId(1);
         User user = new User(address,"Wei","Tang","wei.tang@gamil.com","6319463426",date,(byte)0);
-        User user1 = new User(address2,"Victor","nunez","vz@gmail.com","110",date,(byte)1);
-//        dao.save(user);
-        dao.delete(2);
+//        User user1 = new User(address2,"Victor","nunez","vz@gmail.com","110",date,(byte)1);
+////        dao.save(user);
+        user.setId(1);
+        dao.save(user);
     }
 }

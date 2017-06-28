@@ -43,4 +43,23 @@
     <bean id="userDAO" class ="com.bank.dao.UserHibernateDAO">
         <property name="hibernateTemplate" ref="template"></property>
     </bean>
+    <bean id="accountDAO" class="com.bank.dao.AccountHibernateDAO">
+        <property name = "hibernateTemplate" ref="template"></property>
+    </bean>
+    <bean id = "accountTypeDAO" class = "com.bank.dao.AccountTypeHibernateDAO">
+        <property name="hibernateTemplate" ref="template"></property>
+    </bean>
+    <bean id = "credentialDAO" class = "com.bank.dao.CredentialHibernateDAO">
+        <property name="hibernateTemplate" ref="template"></property>
+    </bean>
+    <bean id = "transactionDAO" class = "com.bank.dao.TransactionHibernateDAO">
+        <property name="hibernateTemplate" ref="template"></property>
+    </bean>
+    <bean id = "transactionTypeDAO" class = "com.bank.dao.TransactionTypeHibernateDAO">
+        <property name="hibernateTemplate" ref="template"></property>
+    </bean>
+    <bean id = "transactionStatusDAO" class = "com.bank.dao.TransactionStatusHibernateDAO">
+        <property name="hibernateTemplate" ref="template"></property>
+    </bean>
+
 </beans>
