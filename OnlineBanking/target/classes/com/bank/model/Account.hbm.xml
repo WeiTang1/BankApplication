@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 28, 2017 11:29:53 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.bank.model.Account" table="account" catalog="OnlineBanking" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="balance" type="double">
+            <column name="balance" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="accountNumber" type="string">
+            <column name="account_number" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="openedDate" type="date">
+            <column name="opened_date" length="10" not-null="true" />
+        </property>
+        <property name="accountStatus" type="int">
+            <column name="account_status" not-null="true" />
+        </property>
+        <property name="accountTypeId" type="int">
+            <column name="accountType_id" not-null="true" />
+        </property>
+        <set name="transactions" table="transaction" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="account_id" not-null="true" />
+            </key>
+            <one-to-many class="com.bank.model.Transaction" />
+        </set>
+        <set name="users" table="user_has_account" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="account_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.bank.model.User">
+                <column name="user_id" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
