@@ -161,7 +161,7 @@
                 "assets/admin/pages/media/bg/4.jpg"
             ], {
                 fade: 1000,
-                duration: 4000
+                duration: 4001
             }
         );
     });
