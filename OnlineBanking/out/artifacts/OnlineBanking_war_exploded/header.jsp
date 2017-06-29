@@ -14,7 +14,7 @@
             <!-- BEGIN LOGO -->
             <div class="page-logo">
                 <!-- <a href="index.html"><img src="../../assets/admin/layout3/img/logo-default.png" alt="logo" class="logo-default"></a> -->
-                <a href="home.jsp" class="logo-default"><strong><h3><b>The Best Bank Inc.</b></h3></strong></a>
+                <a href="accounts.jsp" class="logo-default"><strong><h3><b>The Best Bank Inc.</b></h3></strong></a>
             </div>
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -72,16 +72,16 @@
                                                     <h3>Accounts Overview</h3>
                                                 </li>
                                                 <li>
-                                                    <a href="account.jsp" class="iconify">
+                                                    <a href="account_information.jsp" class="iconify">
                                                         Checking &nbsp&nbsp&nbsp $32823.12</a>
                                                 </li>
                                                 <li>
-                                                    <a href="account.jsp" class="iconify">
+                                                    <a href="account_information.jsp" class="iconify">
                                                         Savings &nbsp&nbsp&nbsp $82301.31</a>
                                                 </li>
                                                 <li>
                                                     <hr>
-                                                    <a href="all_accounts.jsp">View All Accounts</a>
+                                                    <a href="accounts.jsp">View All Accounts</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -102,7 +102,7 @@
                                                         Spending and Budgeting </a>
                                                 </li>
                                                 <li>
-                                                    <a href="openaccount.jsp" class="iconify">
+                                                    <a href="open_account.jsp" class="iconify">
                                                         Open a new account </a>
                                                 </li>
                                             </ul>
@@ -118,11 +118,11 @@
                         </a>
                         <ul class="dropdown-menu pull-left">
                             <li>
-                                <a href=":;">
+                                <a href="transfer.jsp">
                                     Send Money Between Accounts</a>
                             </li>
                             <li>
-                                <a href=":;">
+                                <a href="transfer.jsp">
                                     Send Money to Someone </a>
                             </li>
                         </ul>

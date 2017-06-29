@@ -45,7 +45,7 @@
 <body class="page-md login">
 <!-- BEGIN LOGO -->
 <div class="logo">
-  <a href="Login.jsp">
+  <a href="index.jsp">
     <h1 style="color:white"><strong>Bank Application Logo</strong></h1>
   </a>
 </div>
@@ -57,7 +57,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
   <!-- BEGIN LOGIN FORM -->
-  <form class="login-form" action="home.jsp" method="POST">
+  <form class="login-form" action="accounts.jsp" method="POST">
     <h3 class="form-title">Login to your account</h3>
     <div class="alert alert-danger display-hide">
       <button class="close" data-close="alert"></button>
