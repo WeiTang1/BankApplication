@@ -44,6 +44,7 @@ public class LoginController {
             model.setViewName("home");
             model.addObject("username",user.getLastName());
             model.addObject("userid",userId);
+            
         }
         return model;
     }
