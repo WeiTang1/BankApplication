@@ -14,7 +14,7 @@
             <!-- BEGIN LOGO -->
             <div class="page-logo">
                 <!-- <a href="index.html"><img src="../../assets/admin/layout3/img/logo-default.png" alt="logo" class="logo-default"></a> -->
-                <a href="home.jsp" class="logo-default"><strong><h3><b>The Best Bank Inc.</b></h3></strong></a>
+                <a href="accounts.jsp" class="logo-default"><strong><h3><b>The Best Bank Inc.</b></h3></strong></a>
             </div>
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
