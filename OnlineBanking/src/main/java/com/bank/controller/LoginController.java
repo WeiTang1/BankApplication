@@ -1,7 +1,9 @@
 package com.bank.controller;
 
 import com.bank.dao.CredentialHibernateDAO;
+import com.bank.dao.UserHibernateDAO;
 import com.bank.model.Credential;
+import com.bank.model.User;
 import javafx.application.Application;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -26,18 +28,22 @@ public class LoginController {
         System.out.println(username+ password);
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
         CredentialHibernateDAO credentiaoDao = (CredentialHibernateDAO) context.getBean("credentialDAO");
+        UserHibernateDAO userDao = (UserHibernateDAO) context.getBean("userDAO");
         ModelAndView model = new ModelAndView();
         Credential credential = new Credential();
         credential.setLoginId(username);
         credential.setPassword(password);
         List list = credentiaoDao.login(credential);
         credential = (Credential) list.get(0);
+        int userId =credential.getUser().getId();
+        User user = (User) userDao.get(userId);
         if(list.isEmpty()){
             model.setViewName("index");
         }
         else{
             model.setViewName("home");
-            model.addObject("username",credential.getLoginId());
+            model.addObject("username",user.getLastName());
+            model.addObject("userid",userId);
         }
         return model;
     }
