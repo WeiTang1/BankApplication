@@ -41,7 +41,7 @@ public class LoginController {
             model.setViewName("index");
         }
         else{
-            model.setViewName("home");
+            model.setViewName("accounts");
             model.addObject("username",user.getLastName());
             model.addObject("userid",userId);
             

@@ -533,9 +533,6 @@
         Demo.init(); // init demo features
         TableAdvanced.init();
     });
-    function toggle(){
-        $('#static').modal('toggle');
-    }
 </script>
 <!-- END JAVASCRIPTS -->
 </body>
