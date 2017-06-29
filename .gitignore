@@ -1,5 +1,9 @@
 
+
 # Created by https://www.gitignore.io/api/macos,intellij
+
+OnlineBanking/.idea/workspace.xml
+
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -63,7 +67,7 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
-### macOS ###
+
 *.DS_Store
 .AppleDouble
 .LSOverride
@@ -91,3 +95,4 @@ Temporary Items
 .apdisk
 
 # End of https://www.gitignore.io/api/macos,intellij
+

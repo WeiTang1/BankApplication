@@ -61,16 +61,6 @@
                 <div class="col-md-12">
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
                     <div class="portlet light">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                <i class="fa fa-cogs font-green-sharp"></i>
-                                <span class="caption-subject font-green-sharp bold uppercase">Personal Accounts</span>
-                            </div>
-                            <div class="tools">
-                                <a href="javascript:;" class="collapse">
-                                </a>
-                            </div>
-                        </div>
                         <div class="portlet-body">
                             <div class="table-scrollable table-scrollable-borderless">
                                 <table class="table table-hover table-light">
@@ -79,9 +69,6 @@
                                         <th colspan="3">
                                             Account Name
                                         </th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
                                         <th>
                                             Balance
                                         </th>
@@ -91,14 +78,11 @@
                                     <tbody>
                                     <tr>
                                         <td>
-                                            <a href="javascript:;" class="primary-link">Checking
+                                            <a href="account_information.jsp" class="primary-link">Checking
                                         </td>
                                         <td>
                                             0323
                                         </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td></td>
                                         <td>
                                             $31825.03
@@ -115,9 +99,6 @@
                                             0931
                                         </td>
                                         <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td>
                                             $82936.71
                                         </td>
@@ -132,9 +113,6 @@
                                         <td>
                                             6613
                                         </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td></td>
                                         <td>
                                             $2391.92
@@ -177,88 +155,88 @@
                         <div class="table-scrollable">
                             <table class="table table-striped table-hover">
                                 <thead>
-                                <tr>
-                                    <th>
-                                        Posting Date
-                                    </th>
-                                    <th>
-                                        Description
-                                    </th>
-                                    <th>
-                                        Type
-                                    </th>
-                                    <th>
-                                        Status
-                                    </th>
-                                    <th>
-                                        Amount
-                                    </th>
-                                    <th>
-                                        Available Balance
-                                    </th>
-                                </tr>
+                                    <tr>
+                                        <th>
+                                            Posting Date
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>
+                                            Type
+                                        </th>
+                                        <th>
+                                            Status
+                                        </th>
+                                        <th>
+                                            Amount
+                                        </th>
+                                        <th>
+                                            Available Balance
+                                        </th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>
-                                        06/28/2017
-                                    </td>
-                                    <td>
-                                        CHIPOTLE
-                                    </td>
-                                    <td>
-                                        Other Payments
-                                    </td>
-                                    <td>
-                                        Cleared
-                                    </td>
-                                    <td>
-                                        -7.50
-                                    </td>
-                                    <td>
-                                        $3232.231
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        06/28/2017
-                                    </td>
-                                    <td>
-                                        VICTOR NUNEZ MOBILE TRANSFER
-                                    </td>
-                                    <td>
-                                        Transfer
-                                    </td>
-                                    <td>
-                                        Processing
-                                    </td>
-                                    <td>
-                                        -20.00
-                                    </td>
-                                    <td>
-                                        $3212.231
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        06/28/2017
-                                    </td>
-                                    <td>
-                                        TEKBASIC LLC
-                                    </td>
-                                    <td>
-                                        Deposit
-                                    </td>
-                                    <td>
-                                        Cleared
-                                    </td>
-                                    <td>
-                                        550.00
-                                    </td>
-                                    <td>
-                                        $3712.231
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>
+                                            06/28/2017
+                                        </td>
+                                        <td>
+                                            CHIPOTLE
+                                        </td>
+                                        <td>
+                                            Other Payments
+                                        </td>
+                                        <td>
+                                            Cleared
+                                        </td>
+                                        <td>
+                                            -7.50
+                                        </td>
+                                        <td>
+                                            $3232.231
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            06/28/2017
+                                        </td>
+                                        <td>
+                                            VICTOR NUNEZ MOBILE TRANSFER
+                                        </td>
+                                        <td>
+                                            Transfer
+                                        </td>
+                                        <td>
+                                            Processing
+                                        </td>
+                                        <td>
+                                            -20.00
+                                        </td>
+                                        <td>
+                                            $3212.231
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            06/28/2017
+                                        </td>
+                                        <td>
+                                            TEKBASIC LLC
+                                        </td>
+                                        <td>
+                                            Deposit
+                                        </td>
+                                        <td>
+                                            Cleared
+                                        </td>
+                                        <td>
+                                            550.00
+                                        </td>
+                                        <td>
+                                            $3712.231
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
