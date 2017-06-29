@@ -61,16 +61,6 @@
                 <div class="col-md-12">
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
                     <div class="portlet light">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                <i class="fa fa-cogs font-green-sharp"></i>
-                                <span class="caption-subject font-green-sharp bold uppercase">Personal Accounts</span>
-                            </div>
-                            <div class="tools">
-                                <a href="javascript:;" class="collapse">
-                                </a>
-                            </div>
-                        </div>
                         <div class="portlet-body">
                             <div class="table-scrollable table-scrollable-borderless">
                                 <table class="table table-hover table-light">
@@ -79,9 +69,6 @@
                                         <th colspan="3">
                                             Account Name
                                         </th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
                                         <th>
                                             Balance
                                         </th>
@@ -91,14 +78,11 @@
                                     <tbody>
                                     <tr>
                                         <td>
-                                            <a href="javascript:;" class="primary-link">Checking
+                                            <a href="account_information.jsp" class="primary-link">Checking
                                         </td>
                                         <td>
                                             0323
                                         </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td></td>
                                         <td>
                                             $31825.03
@@ -115,9 +99,6 @@
                                             0931
                                         </td>
                                         <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td>
                                             $82936.71
                                         </td>
@@ -132,9 +113,6 @@
                                         <td>
                                             6613
                                         </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td></td>
                                         <td>
                                             $2391.92

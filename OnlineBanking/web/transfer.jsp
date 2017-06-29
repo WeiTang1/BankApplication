@@ -11,7 +11,7 @@
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
     <title>Bank | Transfers</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -25,6 +25,9 @@
     <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
     <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+	<link rel="stylesheet" type="text/css" href="assets/global/plugins/select2/select2.css"/>
+	<!-- END PAGE LEVEL SCRIPTS -->
     <!-- BEGIN THEME STYLES -->
     <link href="assets/global/css/components-md.css" id="style_components" rel="stylesheet" type="text/css">
     <link href="assets/global/css/plugins-md.css" rel="stylesheet" type="text/css">
@@ -59,86 +62,134 @@
             <!-- BEGIN PAGE CONTENT INNER -->
             <div class="row">
                 <div class="col-md-12">
-                    <!-- BEGIN SAMPLE TABLE PORTLET-->
-                    <div class="portlet light">
-                        <div class="portlet-body">
-                            <div class="table-scrollable table-scrollable-borderless">
-                                <table class="table table-hover table-light">
-                                    <thead>
-                                    <tr class="uppercase">
-                                        <th colspan="3">
-                                            Account Name
-                                        </th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th>
-                                            Balance
-                                        </th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="account_information.jsp" class="primary-link">Checking
-                                        </td>
-                                        <td>
-                                            0323
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            $31825.03
-                                        </td>
-                                        <td>
-                                            <a data-toggle="modal" onclick="toggle()" style="color:blue">Quick View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Savings
-                                        </td>
-                                        <td>
-                                            0931
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            $82936.71
-                                        </td>
-                                        <td>
-                                            <a data-toggle="modal" href="#stati" style="color:blue">Quick View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Joint Account
-                                        </td>
-                                        <td>
-                                            6613
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            $2391.92
-                                        </td>
-                                        <td>
-                                            <a data-toggle="modal" href="#stati" style="color:blue">Quick View</a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END SAMPLE TABLE PORTLET-->
+					<div class="portlet light">
+						<div class="portlet-body">
+							<div class="tabbable-line">
+								<ul class="nav nav-tabs ">
+									<li class="active">
+										<a href="#tab_15_1" data-toggle="tab">
+										Between My Accounts</a>
+									</li>
+									<li>
+										<a href="#tab_15_2" data-toggle="tab">
+										Send Money to Someone</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane active" id="tab_15_1">
+										<!-- BEGIN FORM-->
+										<form action="javascript:;" class="form-horizontal">
+											<div class="form-body">
+												<div class="form-group">
+													<label class="col-md-3 control-label">From: </label>
+													<div class="col-md-4">
+														<div class="input-icon">
+															<i class="fa fa-bank"></i>
+															<select class="form-control input-circle" name="sendFromBetween">
+																<option selected value="0">-- Select Account --</option>
+																<option value="">Checking - 0932</option>
+																<option value="">Savings - 1233</option>
+																<option value="">Joint - 8231</option>
+																<span class="help-block"> Select from which account
+																</span>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-3 control-label">To: </label>
+													<div class="col-md-4">
+														<div class="input-icon">
+															<i class="fa fa-bank"></i>
+															<select class="form-control input-circle" name="sendToBetween">
+																<option selected value="0">-- Select Account --</option>
+																<option value="">Checking - 0932</option>
+																<option value="">Savings - 1233</option>
+																<option value="">Joint - 8231</option>
+																<span class="help-block"> Select from which account
+																</span>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-3 control-label">Amount: </label>
+													<div class="col-md-4">
+														<div class="input-icon">
+															<i class="fa fa-dollar"></i>
+															<input type="text" class="form-control input-circle" name="sendAmountBetween">
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-actions">
+												<div class="row">
+													<div class="col-md-offset-3 col-md-9">
+														<button type="submit" class="btn btn-circle blue">Submit</button>
+													</div>
+												</div>
+											</div>
+										</form>
+										<!-- END FORM-->
+									</div>
+									<div class="tab-pane" id="tab_15_2">
+										<!-- BEGIN FORM-->
+										<form action="" method="POST" class="form-horizontal">
+											<div class="form-body">
+												<div class="form-group">
+													<label class="col-md-3 control-label">From: </label>
+													<div class="col-md-4">
+														<div class="input-icon">
+															<i class="fa fa-bank"></i>
+															<select class="form-control input-circle" name="sendFromSomeone">
+																<option selected value="0">-- Select Account --</option>
+																<option value="">Checking - 0932</option>
+																<option value="">Savings - 1233</option>
+																<option value="">Joint - 8231</option>
+																<span class="help-block"> Select from which account
+																</span>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-3 control-label">To: </label>
+													<div class="col-md-4">
+														<div class="input-icon">
+															<i class="fa fa-user"></i>
+															<input type="text" class="form-control input-circle" name="sendToSomeone">
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-3 control-label">Amount: </label>
+													<div class="col-md-4">
+														<div class="input-icon">
+															<i class="fa fa-dollar"></i>
+															<input type="text" class="form-control input-circle" name="sendAmountSomeone">
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-actions">
+												<div class="row">
+													<div class="col-md-offset-3 col-md-9">
+														<button type="submit" class="btn btn-circle blue">Submit</button>
+													</div>
+												</div>
+											</div>
+										</form>
+										<!-- END FORM-->
+										<!-- END SAMPLE TABLE PORTLET-->
+										<!-- <p>
+											<a class="btn green" href="ui_tabs_accordions_navs.html#tab_15_2" target="_blank">
+											Activate this tab via URL </a>
+										</p> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
                 </div>
             </div>
             <!-- END PAGE CONTENT INNER -->
@@ -165,19 +216,21 @@
 <script src="assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="assets/global/plugins/select2/select2.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
 <script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
 <script src="assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script src="assets/admin/pages/scripts/form-samples.js"></script>
 
 <script>
     jQuery(document).ready(function() {
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
         Demo.init(); // init demo features
+        FormSamples.init();
     });
-    function toggle(){
-        $('#static').modal('toggle');
-    }
 </script>
 <!-- END JAVASCRIPTS -->
 </body>

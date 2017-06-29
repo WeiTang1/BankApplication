@@ -69,9 +69,6 @@
                                         <th colspan="3">
                                             Account Name
                                         </th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
                                         <th>
                                             Balance
                                         </th>
@@ -86,9 +83,6 @@
                                         <td>
                                             0323
                                         </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td></td>
                                         <td>
                                             $31825.03
@@ -105,9 +99,6 @@
                                             0931
                                         </td>
                                         <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td>
                                             $82936.71
                                         </td>
@@ -122,9 +113,6 @@
                                         <td>
                                             6613
                                         </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td></td>
                                         <td>
                                             $2391.92

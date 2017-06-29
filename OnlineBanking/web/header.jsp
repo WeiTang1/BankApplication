@@ -122,7 +122,7 @@
                                     Send Money Between Accounts</a>
                             </li>
                             <li>
-                                <a href="transfer.jsp">
+                                <a href="transfer.jsp#tab_15_2">
                                     Send Money to Someone </a>
                             </li>
                         </ul>
