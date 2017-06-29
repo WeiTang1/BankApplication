@@ -44,8 +44,7 @@ Contributor(s):
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/OnlineBanking?zeroDateTimeBehavior=convertToNull</property>
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">iwillfly83</property>
+
     <mapping resource="com/bank/model/Account.hbm.xml"/>
     <mapping resource="com/bank/model/AccountType.hbm.xml"/>
     <mapping resource="com/bank/model/TransactionStatus.hbm.xml"/>

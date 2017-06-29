@@ -57,7 +57,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
   <!-- BEGIN LOGIN FORM -->
-  <form class="login-form" action="home.jsp" method="POST">
+  <form class="login-form" action="/OnlineBanking/login" method="POST">
     <h3 class="form-title">Login to your account</h3>
     <div class="alert alert-danger display-hide">
       <button class="close" data-close="alert"></button>

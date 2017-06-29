@@ -40,6 +40,11 @@ public class CredentialHibernateDAO extends HibernateDaoSupport implements DAO {
         System.out.println(((Credential)list.get(0)));
         return list.get(0);
     }
+    @Transactional(readOnly = true)
+    public List login(Credential credential){
+        List list = getHibernateTemplate().find("From Credential where loginId=? and password=?",credential.getLoginId(),credential.getPassword());
+        return list;
+    }
 
     public List list() {
         return getHibernateTemplate().loadAll(Credential.class);

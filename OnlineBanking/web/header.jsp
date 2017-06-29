@@ -25,7 +25,7 @@
                 <ul class="nav navbar-nav pull-right">
                     <li class="dropdown dropdown-user dropdown-dark">
                         <a class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
-                            <span class="username username-hide-mobile"><b>Name</b></span>
+                            <span class="username username-hide-mobile"><b>${username}</b></span>
                         </a>
                     </li>
                     <li class="droddown dropdown-separator">
