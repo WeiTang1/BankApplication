@@ -42,4 +42,10 @@ public class TransactionHibernateDAO extends HibernateDaoSupport implements DAO 
     public List list() {
         return getHibernateTemplate().loadAll(Transaction.class);
     }
+    @Transactional
+    public List list_account_transaction(int id){
+        List list = getHibernateTemplate().find("from Transaction where account.id=?",id);
+        return list;
+    }
+
 }

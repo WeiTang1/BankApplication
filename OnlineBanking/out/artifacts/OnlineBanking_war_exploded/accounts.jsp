@@ -1,6 +1,13 @@
 <%@ page import="java.util.Set" %>
 <%@ page import="java.util.Iterator" %>
-<%@ page import="com.bank.model.Account" %><%--
+<%@ page import="com.bank.model.Account" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="com.bank.dao.AccountTypeHibernateDAO" %>
+<%@ page import="com.bank.model.AccountType" %>
+<%@ page import="com.bank.dao.TransactionHibernateDAO" %>
+<%@ page import="java.util.List" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Kristian Lucero
   Date: 6/28/2017
@@ -79,13 +86,20 @@
                                     </thead>
                                     <tbody>
                                     <%
+                                        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+                                        AccountTypeHibernateDAO accountTypeHibernateDAO = (AccountTypeHibernateDAO) context.getBean("accountTypeDAO");
+                                        TransactionHibernateDAO transactionDao = (TransactionHibernateDAO) context.getBean("transactionDAO");
                                         Set set = (Set)session.getAttribute("accounts");
+
                                         System.out.println(set);
                                         for(Iterator iterator = set.iterator();iterator.hasNext();){
                                             Account account = (Account) iterator.next();
+                                            AccountType accountType = (AccountType) accountTypeHibernateDAO.get(account.getAccountTypeId());
+                                            List list = transactionDao.list_account_transaction(account.getId());
                                             out.print("<td>");
-                                            out.print("<a href =\"account_information.jsp\" class = \"primary-link\">");
-                                            out.print(account.getAccountTypeId());
+                                            out.print("<a href =\"account_information?account_id=" + account.getId() +
+                                                    "\" class = \"primary-link\">");
+                                            out.print(accountType.getAccountType());
                                             out.print("</td>");
                                             out.print("<td>");
                                             out.print(account.getAccountNumber());
