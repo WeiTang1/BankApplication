@@ -1,6 +1,12 @@
 <%@ page import="java.util.Set" %>
 <%@ page import="java.util.Iterator" %>
-<%@ page import="com.bank.model.Account" %><%--
+<%@ page import="com.bank.model.Account" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="com.bank.dao.AccountTypeHibernateDAO" %>
+<%@ page import="com.bank.model.AccountType" %>
+<%@ page import="com.bank.dao.TransactionHibernateDAO" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Kristian Lucero
   Date: 6/28/2017
@@ -41,6 +47,7 @@
 <!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
 <!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
 <body class="page-md">
+
 <jsp:include page="header.jsp" />
 <!-- BEGIN PAGE CONTAINER -->
 <div class="page-container">
@@ -69,7 +76,7 @@
                                     <thead>
                                     <tr class="uppercase">
                                         <th colspan="3">
-                                            Account Name
+                                            Account Type
                                         </th>
                                         <th>
                                             Balance
@@ -79,13 +86,20 @@
                                     </thead>
                                     <tbody>
                                     <%
+                                        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+                                        AccountTypeHibernateDAO accountTypeHibernateDAO = (AccountTypeHibernateDAO) context.getBean("accountTypeDAO");
+                                        TransactionHibernateDAO transactionDao = (TransactionHibernateDAO) context.getBean("transactionDAO");
                                         Set set = (Set)session.getAttribute("accounts");
+
                                         System.out.println(set);
                                         for(Iterator iterator = set.iterator();iterator.hasNext();){
                                             Account account = (Account) iterator.next();
+                                            AccountType accountType = (AccountType) accountTypeHibernateDAO.get(account.getAccountTypeId());
+                                            List list = transactionDao.list_account_transaction(account.getId());
                                             out.print("<td>");
-                                            out.print("<a href =\"account_information.jsp\" class = \"primary-link\">");
-                                            out.print(account.getAccountTypeId());
+                                            out.print("<a href =\"account_information?account_id=" + account.getId() +
+                                                    "\" class = \"primary-link\">");
+                                            out.print(accountType.getAccountType());
                                             out.print("</td>");
                                             out.print("<td>");
                                             out.print(account.getAccountNumber());
@@ -100,51 +114,51 @@
                                             out.print("</tr>");
                                         }
                                     %>
-                                    <tr>
-                                        <td>
-                                            <a href="account_information.jsp" class="primary-link">${sessionScope.accounts}
-                                        </td>
-                                        <td>
-                                            0323
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            $31825.03
-                                        </td>
-                                        <td>
-                                            <a data-toggle="modal" onclick="toggle()" style="color:blue">Quick View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Savings
-                                        </td>
-                                        <td>
-                                            0931
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            $82936.71
-                                        </td>
-                                        <td>
-                                            <a data-toggle="modal" href="#stati" style="color:blue">Quick View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Joint Account
-                                        </td>
-                                        <td>
-                                            6613
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            $2391.92
-                                        </td>
-                                        <td>
-                                            <a data-toggle="modal" href="#stati" style="color:blue">Quick View</a>
-                                        </td>
-                                    </tr>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--<a href="account_information.jsp" class="primary-link">${sessionScope.accounts}--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--0323--%>
+                                        <%--</td>--%>
+                                        <%--<td></td>--%>
+                                        <%--<td>--%>
+                                            <%--$31825.03--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--<a data-toggle="modal" onclick="toggle()" style="color:blue">Quick View</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--<a href="javascript:;" class="primary-link">Savings--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--0931--%>
+                                        <%--</td>--%>
+                                        <%--<td></td>--%>
+                                        <%--<td>--%>
+                                            <%--$82936.71--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--<a data-toggle="modal" href="#stati" style="color:blue">Quick View</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--<a href="javascript:;" class="primary-link">Joint Account--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--6613--%>
+                                        <%--</td>--%>
+                                        <%--<td></td>--%>
+                                        <%--<td>--%>
+                                            <%--$2391.92--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--<a data-toggle="modal" href="#stati" style="color:blue">Quick View</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
                                     </tbody>
                                 </table>
                             </div>
