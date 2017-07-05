@@ -29,11 +29,11 @@
             </key>
             <one-to-many class="com.bank.model.Transaction" />
         </set>
-        <set name="users" table="user_has_account" inverse="false" lazy="true" fetch="select">
+        <set name="users" table="user_has_account" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="account_id" not-null="true" />
             </key>
-            <many-to-many entity-name="com.bank.model.User">
+            <many-to-many entity-name="com.bank.model.User" >
                 <column name="user_id" not-null="true" />
             </many-to-many>
         </set>

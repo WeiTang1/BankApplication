@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="com.bank.model.Account" %><%--
   Created by IntelliJ IDEA.
   User: Kristian Lucero
   Date: 6/28/2017
@@ -76,9 +78,31 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <%
+                                        Set set = (Set)session.getAttribute("accounts");
+                                        System.out.println(set);
+                                        for(Iterator iterator = set.iterator();iterator.hasNext();){
+                                            Account account = (Account) iterator.next();
+                                            out.print("<td>");
+                                            out.print("<a href =\"account_information.jsp\" class = \"primary-link\">");
+                                            out.print(account.getAccountTypeId());
+                                            out.print("</td>");
+                                            out.print("<td>");
+                                            out.print(account.getAccountNumber());
+                                            out.print("</td>");
+                                            out.print("<td></td>");
+                                            out.print("<td>");
+                                            out.print(account.getBalance());
+                                            out.print("</td>");
+                                            out.print("                                        <td>\n" +
+                                                    "                                            <a data-toggle=\"modal\" onclick=\"toggle()\" style=\"color:blue\">Quick View</a>\n" +
+                                                    "                                        </td>");
+                                            out.print("</tr>");
+                                        }
+                                    %>
                                     <tr>
                                         <td>
-                                            <a href="account_information.jsp" class="primary-link">Checking
+                                            <a href="account_information.jsp" class="primary-link">${sessionScope.accounts}
                                         </td>
                                         <td>
                                             0323

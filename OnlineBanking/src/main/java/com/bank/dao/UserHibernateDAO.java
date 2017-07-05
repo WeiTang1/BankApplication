@@ -5,6 +5,7 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by danieltang on 6/28/17.
@@ -46,5 +47,11 @@ public class UserHibernateDAO extends HibernateDaoSupport implements DAO{
     public List list() {
         List list = getHibernateTemplate().loadAll(User.class);
         return list;
+    }
+
+    @Transactional
+    public Set getAccounts(int id){
+        User user = getHibernateTemplate().get(User.class,id);
+        return user.getAccounts();
     }
 }

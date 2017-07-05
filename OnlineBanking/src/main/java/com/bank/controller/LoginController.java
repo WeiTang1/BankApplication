@@ -15,13 +15,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by danieltang on 6/29/17.
  */
 @Controller
 @RequestMapping("/login")
-@SessionAttributes({"username","userid"})
+@SessionAttributes({"username","userid","accounts"})
 public class LoginController {
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView login(@RequestParam("username") String username, @RequestParam("password")String password){
@@ -34,16 +35,19 @@ public class LoginController {
         credential.setLoginId(username);
         credential.setPassword(password);
         List list = credentiaoDao.login(credential);
-        credential = (Credential) list.get(0);
-        int userId =credential.getUser().getId();
-        User user = (User) userDao.get(userId);
+
         if(list.isEmpty()){
             model.setViewName("index");
         }
         else{
+            credential = (Credential) list.get(0);
+            int userId =credential.getUser().getId();
+            User user = (User)userDao.get(userId);
+            Set accounts = userDao.getAccounts(userId);
             model.setViewName("accounts");
             model.addObject("username",user.getLastName());
             model.addObject("userid",userId);
+            model.addObject("accounts",user.getAccounts());
             
         }
         return model;

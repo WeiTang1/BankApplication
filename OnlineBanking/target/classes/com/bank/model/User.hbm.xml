@@ -29,7 +29,7 @@
         <property name="isAdmin" type="byte">
             <column name="is_admin" not-null="true" />
         </property>
-        <set name="accounts" table="user_has_account" inverse="false" lazy="true" fetch="select">
+        <set name="accounts" table="user_has_account" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="user_id" not-null="true" />
             </key>
