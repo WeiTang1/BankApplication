@@ -36,5 +36,14 @@
         <servlet-name>Account_info</servlet-name>
         <url-pattern>/account_information</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>QuickView</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuickView</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

@@ -109,7 +109,7 @@
                                             out.print(account.getBalance());
                                             out.print("</td>");
                                             out.print("                                        <td>\n" +
-                                                    "                                            <a data-toggle=\"modal\" onclick=\"toggle()\" style=\"color:blue\">Quick View</a>\n" +
+                                                    "                                            <a data-toggle=\"modal\" onclick=\"toggle("+account.getId()+")\" style=\"color:blue\">Quick View</a>\n" +
                                                     "                                        </td>");
                                             out.print("</tr>");
                                         }
@@ -318,7 +318,18 @@
         Layout.init(); // init current layout
         Demo.init(); // init demo features
     });
-    function toggle(){
+    function toggle(account_id){
+        console.log(account_id);
+
+        $(document).ready(function() {
+            $.ajax({
+                url: "rest/service/transforaccount/"+account_id,
+
+            }).then(function(data) {
+                console.log(data.entity);
+                console.log(data.entity.entity);
+            });
+        });
         $('#static').modal('toggle');
     }
 </script>
