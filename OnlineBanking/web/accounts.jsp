@@ -114,51 +114,51 @@
                                             out.print("</tr>");
                                         }
                                     %>
-                                    <tr>
-                                        <td>
-                                            <a href="account_information.jsp" class="primary-link">${sessionScope.accounts}
-                                        </td>
-                                        <td>
-                                            0323
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            $31825.03
-                                        </td>
-                                        <td>
-                                            <a data-toggle="modal" onclick="toggle()" style="color:blue">Quick View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Savings
-                                        </td>
-                                        <td>
-                                            0931
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            $82936.71
-                                        </td>
-                                        <td>
-                                            <a data-toggle="modal" href="#stati" style="color:blue">Quick View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Joint Account
-                                        </td>
-                                        <td>
-                                            6613
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            $2391.92
-                                        </td>
-                                        <td>
-                                            <a data-toggle="modal" href="#stati" style="color:blue">Quick View</a>
-                                        </td>
-                                    </tr>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--<a href="account_information.jsp" class="primary-link">${sessionScope.accounts}--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--0323--%>
+                                        <%--</td>--%>
+                                        <%--<td></td>--%>
+                                        <%--<td>--%>
+                                            <%--$31825.03--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--<a data-toggle="modal" onclick="toggle()" style="color:blue">Quick View</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--<a href="javascript:;" class="primary-link">Savings--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--0931--%>
+                                        <%--</td>--%>
+                                        <%--<td></td>--%>
+                                        <%--<td>--%>
+                                            <%--$82936.71--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--<a data-toggle="modal" href="#stati" style="color:blue">Quick View</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--<a href="javascript:;" class="primary-link">Joint Account--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--6613--%>
+                                        <%--</td>--%>
+                                        <%--<td></td>--%>
+                                        <%--<td>--%>
+                                            <%--$2391.92--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--<a data-toggle="modal" href="#stati" style="color:blue">Quick View</a>--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
                                     </tbody>
                                 </table>
                             </div>
@@ -191,7 +191,7 @@
                     </div>
                     <div class="portlet-body">
                         <div class="table-scrollable">
-                            <table class="table table-striped table-hover">
+                            <table id = "popup" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>
@@ -215,66 +215,66 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            06/28/2017
-                                        </td>
-                                        <td>
-                                            CHIPOTLE
-                                        </td>
-                                        <td>
-                                            Other Payments
-                                        </td>
-                                        <td>
-                                            Cleared
-                                        </td>
-                                        <td>
-                                            -7.50
-                                        </td>
-                                        <td>
-                                            $3232.231
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            06/28/2017
-                                        </td>
-                                        <td>
-                                            VICTOR NUNEZ MOBILE TRANSFER
-                                        </td>
-                                        <td>
-                                            Transfer
-                                        </td>
-                                        <td>
-                                            Processing
-                                        </td>
-                                        <td>
-                                            -20.00
-                                        </td>
-                                        <td>
-                                            $3212.231
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            06/28/2017
-                                        </td>
-                                        <td>
-                                            TEKBASIC LLC
-                                        </td>
-                                        <td>
-                                            Deposit
-                                        </td>
-                                        <td>
-                                            Cleared
-                                        </td>
-                                        <td>
-                                            550.00
-                                        </td>
-                                        <td>
-                                            $3712.231
-                                        </td>
-                                    </tr>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--06/28/2017--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--CHIPOTLE--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Other Payments--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Cleared--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%---7.50--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--$3232.231--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--06/28/2017--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--VICTOR NUNEZ MOBILE TRANSFER--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Transfer--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Processing--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%---20.00--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--$3212.231--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--06/28/2017--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--TEKBASIC LLC--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Deposit--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Cleared--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--550.00--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--$3712.231--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
                                 </tbody>
                             </table>
                         </div>
@@ -323,14 +323,42 @@
 
         $(document).ready(function() {
             $.ajax({
+                type:"get",
+                accept:"application/json",
                 url: "rest/service/transforaccount/"+account_id,
+                success:function (data) {
+                    $('#popup').find('tbody').find('tr').remove();
+                    var transactions = data.entity.entity;
+                    $.each(transactions,function(key,val){
+                        console.log(key+" "+val);
+                        var date = val.date;
+                        var amount = val.amount;
+                        var description = val.description;
+                        var status = val.transactionStatusId;
+                        var type = val.transactionTypeId;
+                        var availableBalance = val .availableBalance;
+                        console.log(val);
 
+                        $('#popup').find('tbody')
+                            .append(
+                                $('<tr>')
+                                    .append($('<td>').text(date))
+                                    .append($('<td>').text(amount))
+                                    .append($('<td>').text(description))
+                                    .append($('<td>').text(status))
+                                    .append($('<td>').text(type))
+                                    .append($('<td>').text(availableBalance))
+
+                            );
+                    });
+                    $('#static').modal('toggle');
+                    
+                }
             }).then(function(data) {
-                console.log(data.entity);
-                console.log(data.entity.entity);
+
             });
         });
-        $('#static').modal('toggle');
+
     }
 </script>
 <!-- END JAVASCRIPTS -->
