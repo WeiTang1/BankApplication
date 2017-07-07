@@ -99,6 +99,13 @@ public class Account  implements java.io.Serializable {
         this.users = users;
     }
 
+    public void transfer(double amount){
+        this.balance = this.balance-amount;
+    }
+    public void deposite(double amount){
+        this.balance = this.balance+amount;
+    }
+
 
 
 
