@@ -46,7 +46,7 @@
 <!-- BEGIN LOGO -->
 <div class="logo">
   <a href="index.jsp">
-    <h1 style="color:white"><strong>Bank Application Logo</strong></h1>
+    <h1 style="color:dimgrey"><strong>Bank Application Logo</strong></h1>
   </a>
 </div>
 <!-- END LOGO -->

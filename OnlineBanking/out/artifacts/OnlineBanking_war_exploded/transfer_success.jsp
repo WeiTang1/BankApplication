@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Kristian Lucero
-  Date: 6/28/2017
-  Time: 3:46 PM
+  Date: 7/7/2017
+  Time: 10:40 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,8 +11,8 @@
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-    <meta charset="utf-8"/>
-    <title>Bank | Open Account</title>
+    <meta charset="utf-8">
+    <title>Bank | Transfers</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -26,8 +26,8 @@
     <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL STYLES -->
-	<link rel="stylesheet" type="text/css" href="assets/global/plugins/select2/select2.css"/>
-	<!-- END PAGE LEVEL SCRIPTS -->
+    <link rel="stylesheet" type="text/css" href="assets/global/plugins/select2/select2.css"/>
+    <!-- END PAGE LEVEL SCRIPTS -->
     <!-- BEGIN THEME STYLES -->
     <link href="assets/global/css/components-md.css" id="style_components" rel="stylesheet" type="text/css">
     <link href="assets/global/css/plugins-md.css" rel="stylesheet" type="text/css">
@@ -50,7 +50,7 @@
         <div class="container">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1>Open a New Account</h1>
+                <h1>Transfer Summary</h1>
             </div>
             <!-- END PAGE TITLE -->
         </div>
@@ -61,117 +61,50 @@
         <div class="container">
             <!-- BEGIN PAGE CONTENT INNER -->
             <div class="row">
-                <div class="col-md-5">
-					<!-- BEGIN Portlet PORTLET-->
-					<div class="portlet light">
-						<div class="portlet-title">
-							<h4><b>We pre-filled some of the information for you!</b></h4>
-						</div>
-						<div class="portlet-body">
-							 <table>
-							 	<thead>
-							 		<tr>
-							 			<th></th>
-							 			<th></th>
-							 			<th></th>
-							 		</tr>
-							 	</thead>
-							 	<tbody>
-							 		<tr>
-							 			<td>
-							 				<b>Name</b>
-							 			</td>
-							 			<td>&emsp;&emsp;</td>
-							 			<td>
-							 				Kristian Lucero
-							 			</td>
-							 		</tr>
-							 		<tr>
-							 			<td>
-							 				<b>Email Address</b>
-							 			</td>
-							 			<td>&emsp;&emsp;</td>
-							 			<td>
-							 				klucero@gmail.com
-							 			</td>
-							 		</tr>
-							 		<tr>
-							 			<td>
-							 				<b>Phone Number</b>
-							 			</td>
-							 			<td>&emsp;&emsp;</td>
-							 			<td>
-							 				2018883416
-							 			</td>
-							 		</tr>
-							 		<tr>
-							 			<td>
-							 				<b>Date of Birth</b>
-							 			</td>
-							 			<td>&emsp;&emsp;</td>
-							 			<td>
-							 				4/3/1994
-							 			</td>
-							 		</tr>
-							 		<tr>
-							 			<td>
-							 				<b>Address</b>
-							 			</td>
-							 			<td>&emsp;&emsp;</td>
-							 			<td>
-							 				42 Coriander Way, Englewood, NJ 07631 
-							 			</td>
-							 		</tr>
-							 	</tbody>
-							 </table>
-							 <br>
-							 <i>Change this information in your profile settings.</i>
-						</div>
-					</div>
-					<!-- END Portlet PORTLET-->
-                </div>
-                <div class="col-md-7">
-                	<div class="portlet light">
-	                		<div class="portlet-body">
-		                	<!-- BEGIN FORM-->
-							<form action="/OnlineBanking/openaccount" method="POST" class="form-horizontal">
-								<div class="form-body">
-									<div class="form-group">
-										<label class="col-md-3 control-label">Account Type: </label>
-										<div class="col-md-4">
-											<div class="input-icon">
-												<i class="fa fa-bank"></i>
-												<select class="form-control input-circle" name="accountType">
-													<option selected value="">-- Select Type --</option>
-													<option value="checkingAcc">Checking</option>
-													<option value="savingsAcc">Savings</option>
-													<span class="help-block"> Select from which account
-													</span>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-3 control-label">Initial Balance: </label>
-										<div class="col-md-4">
-											<div class="input-icon">
-												<i class="fa fa-dollar"></i>
-												<input type="text" class="form-control input-circle" name="initialBalance">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="form-actions">
-									<div class="row">
-										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn btn-circle blue">Submit</button>
-										</div>
-									</div>
-								</div>
-							</form>
-							<!-- END FORM-->
-						</div>
-					</div>
+                <div class="col-md-12">
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">Success!</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr class="uppercase">
+                                        <th>
+                                            Date
+                                        </th>
+                                        <th>
+                                            Transferred to
+                                        </th>
+                                        <th>
+                                            Amount
+                                        </th>
+                                        <th>
+                                            Status
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Display date here
+                                        </td>
+                                        <td>
+                                            Display account number
+                                        </td>
+                                        <td>
+                                            Diplay amount
+                                        </td>
+                                        <td>
+                                            Display transfer status
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- END PAGE CONTENT INNER -->
@@ -204,6 +137,7 @@
 <script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
 <script src="assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script src="assets/admin/pages/scripts/form-samples.js"></script>
 
 <script>
     jQuery(document).ready(function() {
@@ -217,3 +151,5 @@
 </body>
 <!-- END BODY -->
 </html>
+
+
