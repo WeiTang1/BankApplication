@@ -44,6 +44,14 @@
         <servlet-name>QuickView</servlet-name>
         <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Transfer</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Transfer</servlet-name>
+        <url-pattern>/transfercontrol</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
