@@ -12,6 +12,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="com.bank.model.Transaction" %>
+<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="com.bank.dao.AccountTypeHibernateDAO" %>
+<%@ page import="com.bank.model.AccountType" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <!--<![endif]-->
@@ -75,6 +83,7 @@
 					<div class="portlet light">
 						<div class="portlet-body">
 							<h3><%
+
 								ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 								AccountTypeHibernateDAO accountTypeDAO= (AccountTypeHibernateDAO) context.getBean("accountTypeDAO");
 
@@ -398,6 +407,7 @@
 					                                            <%--$3712.231--%>
 					                                        <%--</td>--%>
 					                                    <%--</tr>--%>
+
 													</tbody>
 												</table>
 										<!-- END EXAMPLE TABLE PORTLET-->

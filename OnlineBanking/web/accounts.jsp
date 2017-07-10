@@ -7,6 +7,8 @@
 <%@ page import="com.bank.model.AccountType" %>
 <%@ page import="com.bank.dao.TransactionHibernateDAO" %>
 <%@ page import="java.util.List" %><%--
+
+<%--
   Created by IntelliJ IDEA.
   User: Kristian Lucero
   Date: 6/28/2017
@@ -109,7 +111,7 @@
                                             out.print(account.getBalance());
                                             out.print("</td>");
                                             out.print("                                        <td>\n" +
-                                                    "                                            <a data-toggle=\"modal\" onclick=\"toggle()\" style=\"color:blue\">Quick View</a>\n" +
+                                                    "                                            <a data-toggle=\"modal\" onclick=\"toggle("+account.getId()+")\" style=\"color:blue\">Quick View</a>\n" +
                                                     "                                        </td>");
                                             out.print("</tr>");
                                         }
@@ -191,7 +193,7 @@
                     </div>
                     <div class="portlet-body">
                         <div class="table-scrollable">
-                            <table class="table table-striped table-hover">
+                            <table id = "popup" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>
@@ -215,66 +217,66 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            06/28/2017
-                                        </td>
-                                        <td>
-                                            CHIPOTLE
-                                        </td>
-                                        <td>
-                                            Other Payments
-                                        </td>
-                                        <td>
-                                            Cleared
-                                        </td>
-                                        <td>
-                                            -7.50
-                                        </td>
-                                        <td>
-                                            $3232.231
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            06/28/2017
-                                        </td>
-                                        <td>
-                                            VICTOR NUNEZ MOBILE TRANSFER
-                                        </td>
-                                        <td>
-                                            Transfer
-                                        </td>
-                                        <td>
-                                            Processing
-                                        </td>
-                                        <td>
-                                            -20.00
-                                        </td>
-                                        <td>
-                                            $3212.231
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            06/28/2017
-                                        </td>
-                                        <td>
-                                            TEKBASIC LLC
-                                        </td>
-                                        <td>
-                                            Deposit
-                                        </td>
-                                        <td>
-                                            Cleared
-                                        </td>
-                                        <td>
-                                            550.00
-                                        </td>
-                                        <td>
-                                            $3712.231
-                                        </td>
-                                    </tr>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--06/28/2017--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--CHIPOTLE--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Other Payments--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Cleared--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%---7.50--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--$3232.231--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--06/28/2017--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--VICTOR NUNEZ MOBILE TRANSFER--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Transfer--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Processing--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%---20.00--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--$3212.231--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
+                                    <%--<tr>--%>
+                                        <%--<td>--%>
+                                            <%--06/28/2017--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--TEKBASIC LLC--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Deposit--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--Cleared--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--550.00--%>
+                                        <%--</td>--%>
+                                        <%--<td>--%>
+                                            <%--$3712.231--%>
+                                        <%--</td>--%>
+                                    <%--</tr>--%>
                                 </tbody>
                             </table>
                         </div>
@@ -318,8 +320,50 @@
         Layout.init(); // init current layout
         Demo.init(); // init demo features
     });
-    function toggle(){
-        $('#static').modal('toggle');
+    function toggle(account_id){
+        console.log(account_id);
+
+        $(document).ready(function() {
+            console.log("before ajax call");
+            $.ajax({
+                type:"get",
+                accept:"application/json",
+                url: "rest/service/transforaccount/"+account_id,
+                success:function (data) {
+                    $('#popup').find('tbody').find('tr').remove();
+                    var transactions = data.entity.entity;
+                    $.each(transactions,function(key,val){
+                        console.log(key+" "+val);
+                        var date = val.date;
+                        var amount = val.amount;
+                        var description = val.description;
+                        var status = val.transactionStatusId;
+                        var type = val.transactionTypeId;
+                        var availableBalance = val .availableBalance;
+                        console.log(val);
+
+                        $('#popup').find('tbody')
+                            .append(
+                                $('<tr>')
+                                    .append($('<td>').text(date))
+                                    .append($('<td>').text(description))
+                                    .append($('<td>').text(type))
+                                    .append($('<td>').text(status))
+                                    .append($('<td>').text(amount))
+                                    .append($('<td>').text(availableBalance))
+
+                            );
+                    });
+                    $('#static').modal('toggle');
+                    
+                }
+            }).then(function(data) {
+
+            });
+
+
+        });
+
     }
 </script>
 <!-- END JAVASCRIPTS -->

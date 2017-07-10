@@ -47,4 +47,5 @@ public class TransactionHibernateDAO extends HibernateDaoSupport implements DAO 
         List list = getHibernateTemplate().find("from Transaction where account.id=?",id);
         return list;
     }
+
 }

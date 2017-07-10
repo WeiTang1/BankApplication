@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="com.bank.model.Account" %><%--
   Created by IntelliJ IDEA.
   User: Kristian Lucero
   Date: 6/28/2017
@@ -78,18 +80,28 @@
 								<div class="tab-content">
 									<div class="tab-pane active" id="tab_15_1">
 										<!-- BEGIN FORM-->
-										<form action="javascript:;" class="form-horizontal">
+										<form action="/OnlineBanking/transfercontrol" class="form-horizontal" method="post">
 											<div class="form-body">
 												<div class="form-group">
 													<label class="col-md-3 control-label">From: </label>
 													<div class="col-md-4">
 														<div class="input-icon">
 															<i class="fa fa-bank"></i>
-															<select class="form-control input-circle" name="sendFromBetween">
-																<option selected value="0">-- Select Account --</option>
-																<option value="">Checking - 0932</option>
-																<option value="">Savings - 1233</option>
-																<option value="">Joint - 8231</option>
+															<select class="form-control input-circle" name="transfer">
+																<%--<option selected value="0">-- Select Account --</option>--%>
+																<%--<option value="">Checking - 0932</option>--%>
+																<%--<option value="">Savings - 1233</option>--%>
+																<%--<option value="">Joint - 8231</option>--%>
+																<%
+																	Set accounts = (Set)session.getAttribute("accounts");
+																	for(Iterator iterator = accounts.iterator();iterator.hasNext();){
+																	    Account account = (Account) iterator.next();
+
+																	    out.print("<option value=\""+account.getId()+"\">");
+																	    out.print(account.getAccountNumber());
+																	    out.print("</option>");
+																	}
+																%>
 																<span class="help-block"> Select from which account
 																</span>
 															</select>
@@ -101,11 +113,16 @@
 													<div class="col-md-4">
 														<div class="input-icon">
 															<i class="fa fa-bank"></i>
-															<select class="form-control input-circle" name="sendToBetween">
-																<option selected value="0">-- Select Account --</option>
-																<option value="">Checking - 0932</option>
-																<option value="">Savings - 1233</option>
-																<option value="">Joint - 8231</option>
+															<select class="form-control input-circle" name="recipient">
+																<%
+																	for(Iterator iterator = accounts.iterator();iterator.hasNext();){
+																		Account account = (Account) iterator.next();
+
+																		out.print("<option value=\""+account.getId()+"\">");
+																		out.print(account.getAccountNumber());
+																		out.print("</option>");
+																	}
+																%>
 																<span class="help-block"> Select from which account
 																</span>
 															</select>
@@ -117,7 +134,7 @@
 													<div class="col-md-4">
 														<div class="input-icon">
 															<i class="fa fa-dollar"></i>
-															<input type="text" class="form-control input-circle" name="sendAmountBetween">
+															<input type="text" class="form-control input-circle" name="amount">
 														</div>
 													</div>
 												</div>

@@ -22,6 +22,13 @@
           <element id="library" level="project" name="Maven: org.javassist:javassist:3.18.1-GA" />
           <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" />
           <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: org.json:json:20160810" />
+          <element id="library" level="project" name="Maven: javax.ws.rs:jsr311-api:1.1.1" />
+          <element id="library" level="project" name="Maven: com.sun.jersey:jersey-bundle:1.19.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.8" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.8" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="OnlineBanking/web/Web" />

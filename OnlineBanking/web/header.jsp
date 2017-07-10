@@ -14,6 +14,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="com.bank.dao.AccountTypeHibernateDAO" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="com.bank.model.Account" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="com.bank.dao.AccountTypeHibernateDAO" %>
+<%@ page import="com.bank.model.AccountType" %>
+
 <!-- BEGIN HEADER -->
 <div class="page-header">
     <!-- BEGIN HEADER TOP -->
@@ -80,32 +90,26 @@
                                                     <h3>Accounts Overview</h3>
                                                 </li>
                                                 <%
-                                                ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-                                                AccountTypeHibernateDAO accountTypeHibernateDAO = (AccountTypeHibernateDAO) context.getBean("accountTypeDAO");
+                                                    ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+                                                    AccountTypeHibernateDAO accountTypeHibernateDAO = (AccountTypeHibernateDAO) context.getBean("accountTypeDAO");
 
-                                                Set set = (Set)session.getAttribute("accounts");
-                                                for(Iterator iterator = set.iterator();iterator.hasNext();){
-                                                Account account = (Account) iterator.next();
-                                                AccountType accountType = (AccountType) accountTypeHibernateDAO.get(account.getAccountTypeId());
-                                                out.print("<li>");
-                                                out.print("<a href = \"account_information?account_id="+account.getId()+
-                                                "\"class=\"iconify\">");
-                                                out.print(accountType.getAccountType()+"&nbsp&nbsp&nbsp"+account.getBalance());
-                                                out.print("</li>");
-                                                }
+                                                    Set set = (Set)session.getAttribute("accounts");
+                                                    for(Iterator iterator = set.iterator();iterator.hasNext();){
+                                                        Account account = (Account) iterator.next();
+                                                        AccountType accountType = (AccountType) accountTypeHibernateDAO.get(account.getAccountTypeId());
+                                                        out.print("<li>");
+                                                        out.print("<a href = \"account_information?account_id="+account.getId()+
+                                                                "\"class=\"iconify\">");
+                                                        out.print(accountType.getAccountType()+"&nbsp&nbsp&nbsp"+account.getBalance());
+                                                        out.print("</li>");
+                                                    }
                                                 %>
-                                                <%--<li>--%>
-                                                    <%--<a href="account_information.jsp" class="iconify">--%>
-                                                        <%--Checking &nbsp&nbsp&nbsp $32823.12</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li>--%>
-                                                    <%--<a href="account_information.jsp" class="iconify">--%>
-                                                        <%--Savings &nbsp&nbsp&nbsp $82301.31</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li>--%>
-                                                    <%--<hr>--%>
-                                                    <%--<a href="accounts.jsp">View All Accounts</a>--%>
-                                                <%--</li>--%>
+
+                                                <li>
+                                                    <hr>
+                                                    <a href="accounts.jsp">View All Accounts</a>
+                                                </li>
+
                                             </ul>
                                         </div>
                                         <div class="col-md-2 verticalLine">
