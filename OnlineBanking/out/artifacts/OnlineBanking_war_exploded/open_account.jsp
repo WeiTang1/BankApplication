@@ -82,8 +82,7 @@
 							 				<b>Name</b>
 							 			</td>
 							 			<td>&emsp;&emsp;</td>
-							 			<td>
-							 				Kristian Lucero
+							 			<td id="name">
 							 			</td>
 							 		</tr>
 							 		<tr>
@@ -91,8 +90,7 @@
 							 				<b>Email Address</b>
 							 			</td>
 							 			<td>&emsp;&emsp;</td>
-							 			<td>
-							 				klucero@gmail.com
+							 			<td id="email">
 							 			</td>
 							 		</tr>
 							 		<tr>
@@ -100,8 +98,7 @@
 							 				<b>Phone Number</b>
 							 			</td>
 							 			<td>&emsp;&emsp;</td>
-							 			<td>
-							 				2018883416
+							 			<td id="phoneNumber">
 							 			</td>
 							 		</tr>
 							 		<tr>
@@ -109,8 +106,7 @@
 							 				<b>Date of Birth</b>
 							 			</td>
 							 			<td>&emsp;&emsp;</td>
-							 			<td>
-							 				4/3/1994
+							 			<td id="dob">
 							 			</td>
 							 		</tr>
 							 		<tr>
@@ -118,8 +114,7 @@
 							 				<b>Address</b>
 							 			</td>
 							 			<td>&emsp;&emsp;</td>
-							 			<td>
-							 				42 Coriander Way, Englewood, NJ 07631 
+							 			<td id="address">
 							 			</td>
 							 		</tr>
 							 	</tbody>
@@ -134,17 +129,16 @@
                 	<div class="portlet light">
 	                		<div class="portlet-body">
 		                	<!-- BEGIN FORM-->
-							<form action="javascript:;" class="form-horizontal">
+							<form action="/OnlineBanking/openaccount/openaccount" method="post" class="form-horizontal">
 								<div class="form-body">
 									<div class="form-group">
 										<label class="col-md-3 control-label">Account Type: </label>
 										<div class="col-md-4">
 											<div class="input-icon">
 												<i class="fa fa-bank"></i>
-												<select class="form-control input-circle" name="accountType">
+												<select id = "select" class="form-control input-circle" name="accountType">
 													<option selected value="">-- Select Type --</option>
-													<option value="checkingAcc">Checking</option>
-													<option value="savingsAcc">Savings</option>
+
 													<span class="help-block"> Select from which account
 													</span>
 												</select>
@@ -210,7 +204,55 @@
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
         Demo.init(); // init demo features
-        FormSamples.init();
+    });
+    $( document ).ready(function() {
+        console.log("before ajax");
+        $.ajax({
+			type:'get',
+			accept:'application/json',
+			url:"openaccount/getuserinfo",
+			success:function(data){
+				var user_info = data.entity.entity;
+				var name = user_info.firstName +" "+user_info.lastName;
+				var dob = user_info.dateOfBirth;
+				var email = user_info.email;
+				var phoneNumber = user_info.phoneNumber;
+				var address = user_info.address.street+", "+user_info.address.city+", "+user_info.address.state+", "+user_info.address.zipCode;
+				console.log(name);
+				console.log(dob);
+				console.log(email);
+				console.log(phoneNumber);
+				console.log(address);
+				$("#name").html(name);
+				$("#dob").html(dob);
+				$("#email").html(email);
+				$("#phoneNumber").html(phoneNumber);
+				$("#address").html(address);
+
+			}
+		}).then(function(data){
+
+		})
+        $.ajax({
+            type:"get",
+            url:"openaccount/getAccountType",
+            accept:"application/json",
+            success:function(data){
+                console.log("data");
+                console.log(data);
+                var types = data.entity.entity;
+                $.each(types,function(key,val){
+                    var type = val;
+                    console.log(type);
+                    var id = type.id;
+                    var type_description=type.accountType;
+            		$("#select").append($('<option>',{
+            		    value : id,
+						text :type_description
+					}));
+				})
+            }
+        })
     });
 </script>
 <!-- END JAVASCRIPTS -->

@@ -1,4 +1,12 @@
-<%--
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="com.bank.dao.AccountTypeHibernateDAO" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="com.bank.model.Account" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="com.bank.dao.AccountTypeHibernateDAO" %>
+<%@ page import="com.bank.model.AccountType" %><%--
   Created by IntelliJ IDEA.
   User: Kristian Lucero
   Date: 6/28/2017
@@ -97,18 +105,11 @@
                                                     }
                                                 %>
 
-                                                <%--<li>--%>
-                                                    <%--<a href="account_information.jsp" class="iconify">--%>
-                                                        <%--Checking &nbsp&nbsp&nbsp $32823.12</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li>--%>
-                                                    <%--<a href="account_information.jsp" class="iconify">--%>
-                                                        <%--Savings &nbsp&nbsp&nbsp $82301.31</a>--%>
-                                                <%--</li>--%>
                                                 <li>
                                                     <hr>
                                                     <a href="accounts.jsp">View All Accounts</a>
                                                 </li>
+
                                             </ul>
                                         </div>
                                         <div class="col-md-2 verticalLine">

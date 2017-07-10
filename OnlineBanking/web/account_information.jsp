@@ -1,4 +1,10 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="com.bank.model.Transaction" %>
+<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="com.bank.dao.AccountTypeHibernateDAO" %>
+<%@ page import="com.bank.model.AccountType" %><%--
   Created by IntelliJ IDEA.
   User: Kristian Lucero
   Date: 6/28/2017
@@ -76,8 +82,8 @@
                 	
 					<div class="portlet light">
 						<div class="portlet-body">
-							<h3>
-								<%
+							<h3><%
+
 								ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 								AccountTypeHibernateDAO accountTypeDAO= (AccountTypeHibernateDAO) context.getBean("accountTypeDAO");
 
@@ -86,8 +92,7 @@
 								out.print(session.getAttribute("username")+"'s "+account_type+" account");
 
 
-							%>
-							</h3>
+							%></h3>
 							<div class="tabbable-line">
 								<ul class="nav nav-tabs ">
 									<li class="active">
@@ -162,6 +167,246 @@
 
 														}
 													%>
+														<%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--CHIPOTLE--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Other Payments--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Cleared--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%---7.50--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3232.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+					                                    <%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--VICTOR NUNEZ MOBILE TRANSFER--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Transfer--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Processing--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%---20.00--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3212.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+					                                    <%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--TEKBASIC LLC--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Deposit--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Cleared--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--550.00--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3712.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+														<%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--CHIPOTLE--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Other Payments--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Cleared--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%---7.50--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3232.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+					                                    <%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--VICTOR NUNEZ MOBILE TRANSFER--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Transfer--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Processing--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%---20.00--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3212.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+					                                    <%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--TEKBASIC LLC--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Deposit--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Cleared--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--550.00--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3712.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+														<%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--CHIPOTLE--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Other Payments--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Cleared--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%---7.50--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3232.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+					                                    <%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--VICTOR NUNEZ MOBILE TRANSFER--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Transfer--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Processing--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%---20.00--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3212.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+					                                    <%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--TEKBASIC LLC--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Deposit--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Cleared--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--550.00--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3712.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+														<%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--CHIPOTLE--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Other Payments--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Cleared--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%---7.50--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3232.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+					                                    <%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--VICTOR NUNEZ MOBILE TRANSFER--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Transfer--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Processing--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%---20.00--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3212.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
+					                                    <%--<tr>--%>
+					                                        <%--<td>--%>
+					                                            <%--06/28/2017--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--TEKBASIC LLC--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Deposit--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--Cleared--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--550.00--%>
+					                                        <%--</td>--%>
+					                                        <%--<td>--%>
+					                                            <%--$3712.231--%>
+					                                        <%--</td>--%>
+					                                    <%--</tr>--%>
 
 													</tbody>
 												</table>

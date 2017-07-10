@@ -7,6 +7,7 @@
 <%@ page import="com.bank.model.AccountType" %>
 <%@ page import="com.bank.dao.TransactionHibernateDAO" %>
 <%@ page import="java.util.List" %><%--
+
 <%--
   Created by IntelliJ IDEA.
   User: Kristian Lucero
@@ -48,6 +49,7 @@
 <!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
 <!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
 <body class="page-md">
+
 <jsp:include page="header.jsp" />
 <!-- BEGIN PAGE CONTAINER -->
 <div class="page-container">
@@ -76,7 +78,7 @@
                                     <thead>
                                     <tr class="uppercase">
                                         <th colspan="3">
-                                            Account Name
+                                            Account Type
                                         </th>
                                         <th>
                                             Balance
@@ -322,6 +324,7 @@
         console.log(account_id);
 
         $(document).ready(function() {
+            console.log("before ajax call");
             $.ajax({
                 type:"get",
                 accept:"application/json",
@@ -357,6 +360,8 @@
             }).then(function(data) {
 
             });
+
+
         });
 
     }

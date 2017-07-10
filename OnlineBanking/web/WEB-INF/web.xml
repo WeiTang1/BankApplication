@@ -36,6 +36,7 @@
         <servlet-name>Account_info</servlet-name>
         <url-pattern>/account_information</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>QuickView</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -58,7 +59,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>OpenAccount</servlet-name>
-        <url-pattern>/openaccount</url-pattern>
+        <url-pattern>/openaccount/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
