@@ -129,17 +129,16 @@
                 	<div class="portlet light">
 	                		<div class="portlet-body">
 		                	<!-- BEGIN FORM-->
-							<form action="javascript:;" class="form-horizontal">
+							<form action="/OnlineBanking/openaccount/openaccount" method="post" class="form-horizontal">
 								<div class="form-body">
 									<div class="form-group">
 										<label class="col-md-3 control-label">Account Type: </label>
 										<div class="col-md-4">
 											<div class="input-icon">
 												<i class="fa fa-bank"></i>
-												<select class="form-control input-circle" name="accountType">
+												<select id = "select" class="form-control input-circle" name="accountType">
 													<option selected value="">-- Select Type --</option>
-													<option value="checkingAcc">Checking</option>
-													<option value="savingsAcc">Savings</option>
+
 													<span class="help-block"> Select from which account
 													</span>
 												</select>
@@ -234,6 +233,26 @@
 		}).then(function(data){
 
 		})
+        $.ajax({
+            type:"get",
+            url:"openaccount/getAccountType",
+            accept:"application/json",
+            success:function(data){
+                console.log("data");
+                console.log(data);
+                var types = data.entity.entity;
+                $.each(types,function(key,val){
+                    var type = val;
+                    console.log(type);
+                    var id = type.id;
+                    var type_description=type.accountType;
+            		$("#select").append($('<option>',{
+            		    value : id,
+						text :type_description
+					}));
+				})
+            }
+        })
     });
 </script>
 <!-- END JAVASCRIPTS -->

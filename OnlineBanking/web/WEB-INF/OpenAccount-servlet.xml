@@ -7,4 +7,7 @@
 
     <context:component-scan base-package="com.bank.controller" />
     <mvc:annotation-driven></mvc:annotation-driven>
+    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name = "suffix" value = ".jsp" />
+    </bean>
 </beans>

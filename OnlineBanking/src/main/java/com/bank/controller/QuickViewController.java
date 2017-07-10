@@ -42,4 +42,6 @@ public class QuickViewController {
         };
         return Response.ok(list1).build();
     }
+
+
 }
