@@ -16,3 +16,20 @@ app.controller("myController",function($scope,$http){
         console.log("failed");
     })
 })
+var selectApp = angular.module("selectModule",[]);
+selectApp.controller("selectController",function($scope,$http){
+    $scope.name= 'Wei';
+    $http({
+        method:"Get",
+        url:'openaccount/getAccountType',
+        accept:"application.json"
+    }).then(function(response){
+        console.log(response);
+        $scope.types = response.data.entity.entity;
+    },function(response){});
+})
+angular.element(document).ready(function(){
+    angular.bootstrap(document.getElementById('selectModule'),['selectModule']);
+})
+
+
