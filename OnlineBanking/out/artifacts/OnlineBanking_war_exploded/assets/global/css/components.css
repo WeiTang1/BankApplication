@@ -12,6 +12,9 @@
 Rounded corners reset
 ***/
 /* Reset rounded corners for all elements */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 div,
 input,
 select,

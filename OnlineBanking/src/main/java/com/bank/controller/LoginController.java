@@ -49,7 +49,6 @@ public class LoginController {
             model.addObject("userid",userId);
             model.addObject("user",user);
             model.addObject("accounts",user.getAccounts());
-            
         }
         return model;
     }

@@ -36,6 +36,10 @@
     <link href="assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	<script src ="assets/angular.js" type="text/javascript"></script>
+
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -67,7 +71,7 @@
 						<div class="portlet-title">
 							<h4><b>We pre-filled some of the information for you!</b></h4>
 						</div>
-						<div class="portlet-body">
+						<div class="portlet-body" ng-app = "myApp" ng-controller="myController" ng-cloak="">
 							 <table>
 							 	<thead>
 							 		<tr>
@@ -76,13 +80,14 @@
 							 			<th></th>
 							 		</tr>
 							 	</thead>
-							 	<tbody>
+							 	<tbody >
 							 		<tr>
 							 			<td>
 							 				<b>Name</b>
 							 			</td>
 							 			<td>&emsp;&emsp;</td>
-							 			<td id="name">
+							 			<td id="name" ng-cloak=>
+											{{usr.firstName+" "+usr.lastName}}
 							 			</td>
 							 		</tr>
 							 		<tr>
@@ -90,7 +95,8 @@
 							 				<b>Email Address</b>
 							 			</td>
 							 			<td>&emsp;&emsp;</td>
-							 			<td id="email">
+							 			<td id="email" ng-cloak>
+											{{usr.email}}
 							 			</td>
 							 		</tr>
 							 		<tr>
@@ -98,7 +104,8 @@
 							 				<b>Phone Number</b>
 							 			</td>
 							 			<td>&emsp;&emsp;</td>
-							 			<td id="phoneNumber">
+							 			<td id="phoneNumber" ng-cloak>
+											{{usr.phoneNumber}}
 							 			</td>
 							 		</tr>
 							 		<tr>
@@ -106,7 +113,8 @@
 							 				<b>Date of Birth</b>
 							 			</td>
 							 			<td>&emsp;&emsp;</td>
-							 			<td id="dob">
+							 			<td id="dob" ng-cloak>
+											{{usr.dateOfBirth}}
 							 			</td>
 							 		</tr>
 							 		<tr>
@@ -114,7 +122,8 @@
 							 				<b>Address</b>
 							 			</td>
 							 			<td>&emsp;&emsp;</td>
-							 			<td id="address">
+							 			<td id="address" ng-cloak>
+											{{address.street+", "+address.city+", "+address.state+", "+address.zipCode}}
 							 			</td>
 							 		</tr>
 							 	</tbody>
@@ -208,32 +217,32 @@
     });
     $( document ).ready(function() {
         console.log("before ajax");
-        $.ajax({
-			type:'get',
-			accept:'application/json',
-			url:"openaccount/getuserinfo",
-			success:function(data){
-				var user_info = data.entity.entity;
-				var name = user_info.firstName +" "+user_info.lastName;
-				var dob = user_info.dateOfBirth;
-				var email = user_info.email;
-				var phoneNumber = user_info.phoneNumber;
-				var address = user_info.address.street+", "+user_info.address.city+", "+user_info.address.state+", "+user_info.address.zipCode;
-				console.log(name);
-				console.log(dob);
-				console.log(email);
-				console.log(phoneNumber);
-				console.log(address);
-				$("#name").html(name);
-				$("#dob").html(dob);
-				$("#email").html(email);
-				$("#phoneNumber").html(phoneNumber);
-				$("#address").html(address);
-
-			}
-		}).then(function(data){
-
-		})
+//        $.ajax({
+//			type:'get',
+//			accept:'application/json',
+//			url:"openaccount/getuserinfo",
+//			success:function(data){
+//				var user_info = data.entity.entity;
+//				var name = user_info.firstName +" "+user_info.lastName;
+//				var dob = user_info.dateOfBirth;
+//				var email = user_info.email;
+//				var phoneNumber = user_info.phoneNumber;
+//				var address = user_info.address.street+", "+user_info.address.city+", "+user_info.address.state+", "+user_info.address.zipCode;
+//				console.log(name);
+//				console.log(dob);
+//				console.log(email);
+//				console.log(phoneNumber);
+//				console.log(address);
+//				$("#name").html(name);
+//				$("#dob").html(dob);
+//				$("#email").html(email);
+//				$("#phoneNumber").html(phoneNumber);
+//				$("#address").html(address);
+//
+//			}
+//		}).then(function(data){
+//
+//		})
         $.ajax({
             type:"get",
             url:"openaccount/getAccountType",

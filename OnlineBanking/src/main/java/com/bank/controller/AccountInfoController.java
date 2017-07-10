@@ -27,6 +27,5 @@ public class AccountInfoController {
         model.addObject("transactions",list);
         model.setViewName("account_information");
         return model;
-
     }
 }
