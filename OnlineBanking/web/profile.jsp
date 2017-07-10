@@ -69,7 +69,7 @@
                         </div>
                         <div class="portlet-body form">
                             <!-- BEGIN FORM-->
-                            <form class="form-horizontal" role="form">
+                            <form action="/OnlineBanking/profile/updateUser" method="POST" class="form-horizontal" role="form">
                                 <div class="form-body">
                                     <h3 class="form-section">Personal Information</h3>
                                     <div class="row">
@@ -77,7 +77,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">First Name:</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" id="firstName" name="firstName" readonly> </input>
+                                                    <input type="text" id="firstName" name="firstName" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -86,7 +86,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Last Name:</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" id="lastName" name="lastName" readonly> </input>
+                                                    <input type="text" id="lastName" name="lastName" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,7 +98,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Email Address:</label>
                                                 <div class="col-md-9">
-                                                    <input type="email" id="email" name="email" readonly>  </input>
+                                                    <input type="email" id="email" name="email" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -107,7 +107,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Phone Number</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" id="phoneNumber" name="phoneNumber" readonly>  </input>
+                                                    <input type="text" id="phoneNumber" name="phoneNumber" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -119,7 +119,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Date of Birth:</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" id="dateOfBirth" name="dateOfBirth" readonly> </input>
+                                                    <input type="text" id="dateOfBirth" name="dateOfBirth" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,7 +131,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Address:</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" id="street" name="street" readonly> </input>
+                                                    <input type="text" id="street" name="street" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -141,7 +141,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">City:</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" id="city" name="city" readonly> </input>
+                                                    <input type="text" id="city" name="city" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,7 +150,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">State:</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" id="state" name="state" readonly> </input>
+                                                    <input type="text" id="state" name="state" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,20 +162,10 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Zip Code:</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" id="zipCode" name="zipCode" readonly> </input>
+                                                    <input type="text" id="zipCode" name="zipCode" readonly>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--/span-->
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label col-md-3">Country:</label>
-                                                <div class="col-md-9">
-                                                    <input type="text" id="country" name="country" readonly> </input>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--/span-->
                                     </div>
                                 </div>
                                 <div class="form-actions">
@@ -232,6 +222,28 @@
 <script src="assets/admin/pages/scripts/form-samples.js"></script>
 
 <script>
+    $(document).ready(function(){
+        $.ajax({
+            type: "get",
+            accept: "application/json",
+            url: "profile/getUserInfo",
+            success: function(data) {
+                var user = data.entity.entity;
+                console.log(user);
+                $("#firstName").val(user.firstName);
+                $("#lastName").val(user.lastName);
+                $("#email").val(user.email);
+                $("#phoneNumber").val(user.phoneNumber);
+                $("#dateOfBirth").val(user.dateOfBirth);
+                $("#street").val(user.address.street);
+                $("#city").val(user.address.city);
+                $("#state").val(user.address.state);
+                $("#country").val(user.address.country);
+                $("#zipCode").val(user.address.zipCode);
+            }
+        })
+    })
+
     jQuery(document).ready(function() {
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
@@ -244,11 +256,6 @@
             $("#email").prop("readonly", false);
             $("#phoneNumber").prop("readonly", false);
             $("#dateOfBirth").prop("readonly", false);
-            $("#street").prop("readonly", false);
-            $("#city").prop("readonly", false);
-            $("#state").prop("readonly", false);
-            $("#zipCode").prop("readonly", false);
-            $("#country").prop("readonly", false);
             $("#editBtn").toggle();
             $("#saveBtn").toggle();
         });
@@ -259,11 +266,6 @@
             $("#email").prop("readonly", true);
             $("#phoneNumber").prop("readonly", true);
             $("#dateOfBirth").prop("readonly", true);
-            $("#street").prop("readonly", true);
-            $("#city").prop("readonly", true);
-            $("#state").prop("readonly", true);
-            $("#zipCode").prop("readonly", true);
-            $("#country").prop("readonly", true);
             $("#editBtn").toggle();
             $("#saveBtn").toggle();
         })

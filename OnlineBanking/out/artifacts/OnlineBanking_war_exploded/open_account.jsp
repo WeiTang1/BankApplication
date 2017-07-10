@@ -129,6 +129,7 @@
                 	<div class="portlet light">
 	                		<div class="portlet-body">
 		                	<!-- BEGIN FORM-->
+
 							<form action="/OnlineBanking/openaccount/openaccount" method="post" class="form-horizontal">
 								<div class="form-body">
 									<div class="form-group">
