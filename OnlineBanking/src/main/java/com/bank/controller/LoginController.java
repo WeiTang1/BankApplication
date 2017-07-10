@@ -22,7 +22,7 @@ import java.util.Set;
  */
 @Controller
 @RequestMapping("/login")
-@SessionAttributes({"username","userid","accounts"})
+@SessionAttributes({"username","userid","accounts","user"})
 public class LoginController {
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView login(@RequestParam("username") String username, @RequestParam("password")String password){
@@ -47,6 +47,7 @@ public class LoginController {
             model.setViewName("accounts");
             model.addObject("username",user.getLastName());
             model.addObject("userid",userId);
+            model.addObject("user",user);
             model.addObject("accounts",user.getAccounts());
             
         }

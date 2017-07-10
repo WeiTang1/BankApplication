@@ -322,6 +322,7 @@
         console.log(account_id);
 
         $(document).ready(function() {
+            console.log("before ajax call");
             $.ajax({
                 type:"get",
                 accept:"application/json",

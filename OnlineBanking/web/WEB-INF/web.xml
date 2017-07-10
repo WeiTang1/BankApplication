@@ -58,7 +58,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>OpenAccount</servlet-name>
-        <url-pattern>/openaccount</url-pattern>
+        <url-pattern>/openaccount/*</url-pattern>
     </servlet-mapping>
 
 </web-app>

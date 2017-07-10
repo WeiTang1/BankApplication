@@ -322,6 +322,7 @@
         console.log(account_id);
 
         $(document).ready(function() {
+            console.log("before ajax call");
             $.ajax({
                 type:"get",
                 accept:"application/json",
@@ -343,10 +344,10 @@
                             .append(
                                 $('<tr>')
                                     .append($('<td>').text(date))
-                                    .append($('<td>').text(amount))
                                     .append($('<td>').text(description))
-                                    .append($('<td>').text(status))
                                     .append($('<td>').text(type))
+                                    .append($('<td>').text(status))
+                                    .append($('<td>').text(amount))
                                     .append($('<td>').text(availableBalance))
 
                             );
